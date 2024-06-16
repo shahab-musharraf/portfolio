@@ -26,7 +26,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
-const ProjectCard = ({ title, description, imageUrl, projectLink }) => {
+type ProjectCardProps = {
+  title: string;
+  description: string;
+  imageUrl: string;
+  projectLink: string;
+};
+
+
+const ProjectCard : React.FC<ProjectCardProps> = ({ title, description, imageUrl, projectLink }) => {
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg border border-gray-200 hover:border-blue-500 relative">
       <Image className="w-full" src={imageUrl} alt={title} />
